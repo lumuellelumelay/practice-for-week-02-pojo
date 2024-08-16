@@ -13,8 +13,25 @@ keysInObject(foods); // => ["apple", "lemon", "mango"]
 ***********************************************************************/
 
 function keysInObject(obj) {
-  // Your code here
+  // for "for...in" loop
+  // creating an empty arr
+  let arr = [];
+  for (keys in obj) {
+    // push keys to the array
+    arr.push(keys);
+  }
+  //returning the array with keys
+  return arr;
 }
+
+/***********************************************************************
+
+function keysInObject(obj) {
+  // Object.keys
+  return Object.keys(obj);
+}
+
+***********************************************************************/
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = keysInObject;

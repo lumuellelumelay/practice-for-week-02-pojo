@@ -15,8 +15,22 @@ valuesInObject(foods); // => ["tart", "sour", "sweet"]
 ***********************************************************************/
 
 function valuesInObject(obj) {
-  // Your code here
+  let arr = [];
+  for (key in obj) {
+    let value = obj[key];
+    arr.push(value);
+  }
+  return arr;
 }
+
+/***********************************************************************
+
+function valuesInObject(obj) {
+  // Object.values
+  return Object.values(obj);
+}
+
+***********************************************************************/
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = valuesInObject;

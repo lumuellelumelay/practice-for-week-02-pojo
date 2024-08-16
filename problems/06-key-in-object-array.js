@@ -20,7 +20,15 @@ keyInObjectArray(objArray, 'animal'); // => false
 ***********************************************************************/
 
 function keyInObjectArray(objArray, keyString) {
-  // Your code here
+  let status = false;
+  objArray.forEach(function (element) {
+    // checking element(obj) if it is the same as keyString
+    // return true if yes
+    if (Object.keys(element).includes(keyString)) {
+      status = true;
+    }
+  });
+  return status;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

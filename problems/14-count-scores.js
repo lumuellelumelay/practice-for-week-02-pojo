@@ -28,7 +28,37 @@ console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 ***********************************************************************/
 
 function countScores(people) {
-  // Your code here
+  let newScores = {};
+  let tempArr = null;
+  let tempKey = null;
+  people.forEach(function (element) {
+    let obj = element; // Getting the objects from the people array
+    for (let key in obj) {
+      // Getting the value of the objects
+      let value = obj[key];
+
+      // checking if the value is a string and if it is NOT in the newScores object
+      if (newScores[value] === undefined && value.length > 0) {
+        // setting a new key for the newScores using the obj value
+        newScores[value] = null;
+        tempKey = value; // tempkey for newScores
+      }
+
+      // checking if the value is numerical and the key has no value;
+      else if (null === newScores[tempKey]) {
+        newScores[tempKey] = value; // setting the value of the key newScores
+      }
+
+      // checking the key if is it in the newScores object
+      else if (tempArr.includes(tempKey)) {
+        let valueNewScores = newScores[tempKey];
+        newScores[tempKey] = valueNewScores + value;
+      }
+      tempArr = Object.keys(newScores); // updating the arr
+      tempKey = value; // return name
+    }
+  });
+  return newScores;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
